@@ -1,18 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
 
-body {
-  /*Configuração Geral*/
-
-  margin: 0px;
-  padding: 0px;
+* {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-  /*
-        estilo body
-    */
-
+body {
   font-family: "Roboto", Arial, Helvetica, sans-serif;
-  font-size: 25px;
+  font-size: 16px;
   font-weight: 500;
   background-color: #d392d3;
   background-image: url("../assets/freepik__expand__67094.png");
@@ -20,161 +16,139 @@ body {
   background-size: cover;
   background-position: center;
   height: 100vh;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
 }
 
-@media (max-width: 768px) { /* tablets */
+h1 {
+  color: rgb(147, 111, 180);
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.calculator-container {
+  background-color: rgb(147, 111, 180);
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.calculator-display {
+  background-color: rgba(209, 197, 209, 0.514);
+  width: 100%;
+  height: 80px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 2rem;
+}
+
+.result {
+  margin-right: 10px;
+}
+
+.buttons-row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.calculator-number-buttons,
+.equals-buttom {
+  background-color: #c49dc4;
+  width: 100%;
+  max-width: 70px;
+  height: 70px;
+  border: none;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calculator-number-buttons:hover,
+.equals-buttom:hover {
+  background-color: #e464c8;
+  transform: scale(1.05);
+}
+
+.calculator-number-buttons:focus,
+.equals-buttom:focus {
+  background-color: #b965e0;
+}
+
+.equals-buttom {
+  width: 100%;
+  max-width: 150px;
+  border-radius: 30px;
+  font-size: 1.8rem;
+}
+
+/* Estilo Responsivo */
+@media (max-width: 768px) {
   body {
-    font-size: 20px;
+    font-size: 14px;
+    padding: 10px;
   }
-  /* h1 {
-    color: rgb(147, 111, 180);
-    font-size: 40px;
-    margin-bottom: 20px;
-  } */
-
-  .calculator-container {
-    background-color: rgb(147, 111, 180);
-    width: 400px;
-    height: 600px;
-    border-radius: 20px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+  h1 {
+    font-size: 1.8rem;
   }
-
   .calculator-display {
-    background-color: rgba(209, 197, 209, 0.514);
-    width: 90%;
-    height: 80px;
-    border-radius: 20px;
-    margin: 40px auto 16px auto;
-    display: flex;
-    justify-content: end;
-    text-align: end;
-    align-items: center;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    height: 60px;
+    font-size: 1.8rem;
   }
-
-  .calculator-number-buttons {
-    background-color: #c49dc4;
-    width: 70px;
-    height: 70px;
-    border: 0px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 20px;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .calculator-number-buttons:hover {
-    background-color: #e464c8;
-  }
-  .calculator-number-buttons:focus {
-    background-color: #b965e0;
-  }
-
+  .calculator-number-buttons,
   .equals-buttom {
-    background-color: #d392d3;
-    width: 180px;
-    height: 70px;
-    border: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 25px;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    max-width: 60px;
+    height: 60px;
+    font-size: 1.2rem;
   }
-
-  .equals-buttom:hover {
-    background-color: #e464c8;
-  }
-  .equals-buttom:focus {
-    background-color: #b965e0;
+  .equals-buttom {
+    max-width: 130px;
+    font-size: 1.5rem;
   }
 }
 
-@media (max-width: 480px) { /* celular */
+@media (max-width: 480px) {
   body {
-    font-size: 16px;
+    font-size: 12px;
   }
-  /* h1 {
-    color: rgb(147, 111, 180);
-    font-size: 40px;
-    margin-bottom: 20px;
-  } */
-
+  h1 {
+    font-size: 1.5rem;
+  }
   .calculator-container {
-    background-color: rgb(147, 111, 180);
-    width: 300px;
-    height: 500px;
-    border-radius: 20px;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    padding: 15px;
   }
-
   .calculator-display {
-    background-color: rgba(209, 197, 209, 0.514);
-    width: 100%;
-    height: 60px;
-    border-radius: 20px;
-    margin: 20px auto 10px auto;
-    display: flex;
-    justify-content: end;
-    text-align: end;
-    align-items: center;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
-  }
-
-  .calculator-number-buttons {
-    background-color: #c49dc4;
-    width: 50px;
     height: 50px;
-    border: 0px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 22px;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1.5rem;
   }
-
-  .calculator-number-buttons:hover {
-    background-color: #e464c8;
-  }
-  .calculator-number-buttons:focus {
-    background-color: #b965e0;
-  }
-
+  .calculator-number-buttons,
   .equals-buttom {
-    background-color: #d392d3;
-    width: 150px;
+    max-width: 50px;
     height: 50px;
-    border: 0px;
-    border-radius: 30px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-size: 25px;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    font-size: 1rem;
   }
-
-  .equals-buttom:hover {
-    background-color: #e464c8;
-  }
-  .equals-buttom:focus {
-    background-color: #b965e0;
+  .equals-buttom {
+    max-width: 100px;
+    font-size: 1.2rem;
   }
 }
